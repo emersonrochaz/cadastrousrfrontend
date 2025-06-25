@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cadastro Usuário</title>
+    <link rel="stylesheet" href="cadastro.css" />
+</head>
+<body>
+    <div id="mensagem" class="mensagem"></div>
+
+    <div id="confirmacao" class="mensagem confirmacao">
+        <span id="textoConfirmacao"></span>
+        <div class="botoes-confirmacao">
+            <button id="btnConfirmar" class="btn-atribuir">Sim</button>
+            <button id="btnCancelar" class="btn-fechar">Não</button>
+        </div>
+    </div>
+
+    <div class="cabecalho">
+        <span class="titulo">Cadastro Usuário</span>
+        <span class="codigo">C0001</span>
+    </div>
+    <hr class="linha" />
+
+    <div class="conteudo-principal">
+        <form class="formulario">
+            <label for="nome" class="label-nome">Nome Completo</label>
+            <input type="text" id="nome" class="input-nome" name="nome" />
+
+            <label for="departamento" class="label-departamento">Departamento</label>
+            <select id="departamento" class="input-departamento" name="departamento">
+                <option value="">Selecione um departamento</option>
+                <option value="administrativo">Administrativo</option>
+                <option value="atendimento">SAC</option>
+                <option value="comercial">Comercial</option>
+                <option value="desenvolvimento">Desenvolvimento</option>
+                <option value="diretoria">Diretoria</option>
+                <option value="financeiro">Financeiro</option>
+                <option value="juridico">Jurídico</option>
+                <option value="logistica">Logística</option>
+                <option value="marketing">Marketing</option>
+                <option value="p&d">P&D</option>
+                <option value="producao">Produção</option>
+                <option value="rh">Recursos Humanos</option>
+                <option value="semst">SEMST</option>
+                <option value="ti">Tecnologia da Informação</option>
+            </select>
+
+            <label for="usuario" class="label-usuario">Usuário</label>
+            <input type="text" id="usuario" class="input-usuario" name="usuario" />
+
+            <label for="senha" class="label-senha">Senha</label>
+            <input type="password" id="senha" class="input-senha" name="senha" />
+
+            <div class="botoes">
+                <button id="btnDeletar" class="btn-fechar" type="button">Deletar</button>
+                <button id="btnAtualizar" class="btn-atualizar" type="button">Atualizar</button>
+                <button class="btn-atribuir" type="button" onclick="processarFormulario()">Salvar</button>
+            </div>
+        </form>
+
+        <div class="lista-usuarios-container">
+            <h2 class="titulo-lista">Usuários Cadastrados</h2>
+            <div class="busca-container">
+                <input
+                    type="text"
+                    id="inputBuscaUsuario"
+                    placeholder="Pesquisar usuário (ex: nome.sobrenome)"
+                />
+                <button id="btnBuscarUsuario">Buscar</button>
+                <button id="btnLimparBusca">Limpar Busca</button>
+            </div>
+            <ul id="listaUsuarios" class="lista-usuarios"></ul>
+        </div>
+    </div>
+
+    <script src="validaCadastro.js"></script>
+</body>
+</html>

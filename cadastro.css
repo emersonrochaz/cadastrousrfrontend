@@ -1,0 +1,315 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #2c2c2c;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    width: 100vw;
+    height: 100vh;
+}
+
+.cabecalho {
+    width: 100vw;
+    padding: 20px 60px;
+    display: flex;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.titulo {
+    font-size: 32px;
+}
+
+.codigo {
+    font-size: 32px;
+    position: absolute;
+    right: 60px;
+    top: 20px;
+}
+
+.linha {
+    margin: -5px 60px 0 60px;
+    border: 1px solid #ffffff;
+}
+
+.conteudo-principal {
+    display: flex;
+    gap: 40px;
+    padding: 0 60px 60px 60px;
+    box-sizing: border-box;
+    height: calc(100vh - 130px);
+    overflow: hidden;
+}
+
+.formulario {
+    flex: 1;
+    max-width: 900px;
+    padding-right: 20px;
+    box-sizing: border-box;
+    height: 100%;
+    overflow-y: visible;
+}
+
+.formulario label {
+    display: block;
+    margin-top: 20px;
+    font-size: 24px;
+    text-align: left;
+}
+
+.formulario input,
+.formulario select {
+    display: block;
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    background: #d9d9d9;
+    padding: 0 10px;
+    font-size: 18px;
+    margin-top: 10px;
+    box-sizing: border-box;
+    appearance: none;
+}
+
+
+.botoes {
+    padding: 20px 0 0 0;
+    display: flex;
+    justify-content: flex-start;
+    gap: 50px;
+    box-sizing: border-box;
+    margin-top: 260px;
+}
+
+.botoes button {
+    width: 141px;
+    height: 44px;
+    border-radius: 10px;
+    border: none;
+    font-size: 18px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.btn-fechar {
+    background: #c00000;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 8px;
+}
+
+.btn-atualizar {
+    background: #bc9600;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 8px;
+}
+
+.btn-atribuir {
+    background: #70ad47;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 8px;
+}
+
+
+.mensagem {
+    position: fixed;
+    top: -60px;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+    text-align: center;
+    font-weight: 600;
+    font-family: Arial, sans-serif;
+    z-index: 9999;
+    box-sizing: border-box;
+    border-radius: 0 0 8px 8px;
+    opacity: 0;
+    transition: top 0.5s ease, opacity 0.5s ease;
+    pointer-events: none;
+}
+
+.mensagem.show {
+    top: 0;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+.confirmacao {
+    top: -100px;
+    background-color: #fff3cd;
+    color: #664d03;
+    border: 1px solid #ffecb5;
+    padding: 20px 0;
+    font-size: 18px;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    border-radius: 0 0 8px 8px;
+    opacity: 0;
+    transition: top 0.5s ease, opacity 0.5s ease;
+    pointer-events: none;
+    z-index: 10000;
+}
+
+.confirmacao.show {
+    top: 0;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.botoes-confirmacao {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+.lista-usuarios-container {
+    width: 700px;
+    height: 100%;
+    background-color: #3d3d3d;
+    border-radius: 8px;
+    padding: 20px;
+    box-sizing: border-box;
+    color: #fff;
+    overflow-y: auto;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    flex-shrink: 0;
+    margin-top: 20px;
+    margin-left: 40px;
+}
+
+.titulo-lista {
+    font-size: 24px;
+    margin-bottom: 20px;
+    padding: 0 0 10px 0;
+    color: #ffffff;
+    text-align: center;
+}
+
+.lista-usuarios {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.lista-usuarios li {
+    background: #4a90e2;
+    margin-top: 15px;
+    padding: 20px;
+    border-radius: 12px;
+    color: #ffffff;
+    font-size: 18px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.lista-usuarios li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+}
+
+
+.busca-container {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+#inputBuscaUsuario {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+    box-sizing: border-box;
+}
+
+#btnBuscarUsuario, #btnLimparBusca {
+    padding: 10px 15px;
+    font-size: 14px;
+    border-radius: 8px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    box-sizing: border-box;
+    width: auto;
+}
+
+#btnBuscarUsuario {
+    background-color: #70ad47;
+}
+
+#btnLimparBusca {
+    background-color: #bc9600;
+}
+
+
+.erro {
+    background-color: #f8d7da;
+    color: #842029;
+    border: 1px solid #f5c2c7;
+}
+
+.aviso {
+    background-color: #fff3cd;
+    color: #664d03;
+    border: 1px solid #ffecb5;
+}
+
+.sucesso {
+    background-color: #D1E7DD;
+    color: #0F5132;
+    border: 1px solid #BADBCC;
+}
+
+/* Responsividade */
+@media screen and (max-width: 900px) {
+    .conteudo-principal {
+        flex-direction: column;
+        height: auto;
+        padding: 0 20px 20px 20px;
+    }
+
+    .formulario {
+        max-width: 100%;
+        padding-right: 0;
+        height: auto;
+        margin-bottom: 30px;
+    }
+
+    .lista-usuarios-container {
+        width: 100%;
+        height: auto;
+        margin-bottom: 30px;
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .formulario input {
+        width: calc(100vw - 40px);
+    }
+
+    .botoes {
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 10px 20px;
+    }
+
+    #inputBuscaUsuario, #btnBuscarUsuario, #btnLimparBusca {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
